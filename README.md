@@ -1,27 +1,43 @@
 # README
-##　テスト
-### こたろにたくさん食べさせてあげてください
-## テスト
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# このアプリについて
+ - マッチングアプリ
+ - 制作期間:3/3 2020 ~
 
-Things you may want to cover:
 
-* Ruby version
+
+# 制作メンバー
+
+## 檜垣 慶太
+<a href="https://github.com/higakikeita"><img src="https://avatars0.githubusercontent.com/u/41051390?s=460&v=4" height="100px;" /></a>
+
+## ayaszmr
+<a href="https://github.com/ayaszmr"><img src="https://avatars0.githubusercontent.com/u/56391010?s=460&v=4" height="100px;" /></a>
+
+
+
+# Gem/ver
+* Ruby:2.5.1
+* Rails:5.2.4.1
 
 * System dependencies
+ - gem
+ - gem
+ - gem
+ - gem
+ - gem
+ - gem
+ - gem
 
-* Configuration
 
-* Database creation
 
-* Database initialization
+# サイトURL
+* https://mymatchh.herokuapp.com
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+## ER図
 
-* ...
+## usersテーブル
+
+### Association
