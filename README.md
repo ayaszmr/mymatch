@@ -42,5 +42,56 @@
 ## ER図
 
 ## usersテーブル
+|Column|Type|Options|
+|------|----|-------|
+|nickname|string|null: false|
+|email|string|null: false, unique:true|
+|password|string|null: false|
+|avatar|text||
+|self_introduction|string||
+|sex|integer|null: false|
+|imag_name|date|null: false|
+### Association
+-has_many :chat_messages<br>
+-has_many :chat_room_users
+
+## reactionテーブル
+|Column|Type|Options|
+|------|----|-------|
+|to_user_id|integer|
+|from_user_id|integer|
+|status|integer|
 
 ### Association
+belongs_to :to_user, class_name: "User"<br>
+belongs_to :from_user, class_name: "User"
+
+## chatroomテーブル
+|Column|Type|Options|
+|------|----|-------|
+|id|integer|
+### Association
+-has_many :chat_messages<br>
+-has_many :chat_room_users
+
+## chat_room_userテーブル
+|Column|Type|Options|
+|------|----|-------|
+|id|integer|
+|chat_room_id|integer|
+|user_id|integer|
+
+### Association
+-belongs_to :chat_room<br>
+-belongs_to :user
+## chat_message
+|Column|Type|Options|
+|------|----|-------|
+|id|integer|
+|chat_room_id|integer|
+|user_id|integer|
+|message|string|
+
+### Association
+-belongs_to :chat_room<br>
+-belongs_to :user
