@@ -2,7 +2,7 @@
   <nav class="nav">
     <ul>
       <li class="personIcon"><%= link_to(content_tag(:i, "", class: 'fas fa-2x fa-user'), user_path(current_user.id)) %></li>
-      <li class="appIcon"><%= link_to image_tag("techpit-march-icon.png"), action: "index" %></li>
+      <li class="appIcon"><%= link_to image_tag("techpit-march-icon.png"), users_path %></li>
     </ul>
   </nav>
   <div id="tinderslide">
@@ -24,13 +24,14 @@
   </div>
 </div>
 <script>
+  // スワイプするユーザー数の定数を定義
   var usersNum = <%= @users.length %>
   var currentUserIndex = 0;
   var postReaction = function (user_id, reaction) {
     $.ajaxSetup({
-      headers: {
-        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content'),
-      }
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content'),
+        }
     });
     $.ajax({
       type: "POST",
@@ -50,7 +51,7 @@
       checkUserNum();
       var user_id = item[0].dataset.user_id
       postReaction(user_id, 'dislike')
-    };
+    },
     onLike: function (item) {
       currentUserIndex++;
       checkUserNum();
@@ -69,6 +70,7 @@
   });
 
   function checkUserNum() {
+    // スワイプするユーザー数とスワイプした回数が同じになればaddClassする
     if (currentUserIndex === usersNum){
       $(".noUser").addClass("is-active");
       $("#actionBtnArea").addClass("is-none")
