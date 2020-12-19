@@ -24,13 +24,13 @@
 * Rails:5.2.4.1
 
 * System dependencies
- - gem
- - gem
- - gem
- - gem
- - gem
- - gem
- - gem
+ - gem 'pry-rails'
+ - gem 'devise'
+ - gem 'bootstrap', '~> 4.1.3'
+ - gem 'jquery-rails'
+ - gem "font-awesome-sass"
+ - gem 'carrierwave', '~> 1.0'
+ - gem 'mini_magick'
 
 
 
